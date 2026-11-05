@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TruthCheck - Fake News Detector</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>📰 TruthCheck</h1>
+        <p>AI-Based Fake News Detection System</p>
+    </header>
+
+
+    <!-- Main Section -->
+    <div class="container">
+
+        <h2>Fake News Detection</h2>
+
+        <p class="description">
+            Check whether a news article is REAL or FAKE
+            using our Machine Learning model.
+        </p>
+
+
+        <!-- News Input -->
+        <textarea
+            id="news"
+            placeholder="Paste your news article or headline here..."
+            required>
+        </textarea>
+
+
+        <!-- Check Button -->
+        <button id="checkButton" onclick="checkNews()">
+            🔍 Detect Fake News
+        </button>
+
+
+        <!-- Clear Button -->
+        <button type="button"
+        onclick="clearNews()"
+        style="background:#64748b;">
+            Clear Text
+        </button>
+
+
+        <!-- Result Section -->
+        <div id="result">
+
+            <h3 id="status"></h3>
+
+            <p id="message"></p>
+
+            <p id="score"></p>
+
+        </div>
+
+
+        <!-- Information -->
+        <div class="note">
+
+            <h3>How it works?</h3>
+
+            <p>
+                1. Enter a news article.
+                <br><br>
+                2. Click Detect Fake News.
+                <br><br>
+                3. Our machine learning model analyzes
+                the text.
+                <br><br>
+                4. View the prediction.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 TruthCheck</p>
+        <p>AI-Based Fake News Detection Project</p>
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static',
+    filename='script.js') }}"></script>
+
+
+    <script>
+
+        function clearNews() {
+
+            document.getElementById("news").value = "";
+
+            document.getElementById("result").style.display = "none";
+
+        }
+
+    </script>
+
+</body>
+</html>
